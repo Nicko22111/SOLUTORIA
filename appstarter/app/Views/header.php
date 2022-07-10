@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand">Navbar</a>
+            <a class="navbar-brand">TEST</a>
             <form class="d-flex">
                 <div style="margin-right: 5px;">
                     <a href="<?= base_url()?>" class="btn btn-success">Ver Grafico</a>

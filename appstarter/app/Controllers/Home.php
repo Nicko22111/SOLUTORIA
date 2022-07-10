@@ -27,14 +27,20 @@ class Home extends BaseController
             $apiUrl = 'https://mindicador.cl/api/'.$indicador."/".$dates;
             $json = file_get_contents($apiUrl);
 
-            $data = json_decode($json);
+            $valores[] = "";
 
-            $valores[] = array(
-                'indicador' => $data->codigo,
-                'unidad' => $data->unidad_medida,
-                'valor' => $data->serie[0]->valor,
-                'fecha' => $data->serie[0]->fecha          
-            );
+            $data = json_decode($json);
+            if ( count($data->serie) <= 0) {
+                
+            }else {
+                $valores[] = array(
+                    'indicador' => $data->codigo,
+                    'unidad' => $data->unidad_medida,
+                    'valor' => $data->serie[0]->valor,
+                    'fecha' => $data->serie[0]->fecha          
+                );
+            }
+
             
         }
 

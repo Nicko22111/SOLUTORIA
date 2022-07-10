@@ -127,14 +127,14 @@
             var indica = "";
 
             for (let i = 0; i < response.length; i++) {
-                indica = response[i].indicador;
-                unidad = response[i].unidad;
-                fechas.push(moment(response[i].fecha).format('DD-MM-YYYY'));
-                valores.push(response[i].valor);
+                if (response[i].valor != null) {
+                    indica = response[i].indicador;
+                    unidad = response[i].unidad;
+                    fechas.push(moment(response[i].fecha).format('DD-MM-YYYY'));
+                    valores.push(response[i].valor);
+                }
             }
 
-            console.log(fechas);
-            console.log(valores);
 
             option = {
                 title: {
